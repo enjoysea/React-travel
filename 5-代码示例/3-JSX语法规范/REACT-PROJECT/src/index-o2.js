@@ -6,17 +6,17 @@ import * as serviceWorker from './serviceWorker';
 
 // 方法一
 /* let h = <div>
- <h2>
- <span>hello,react!</span>
- </h2><ul></ul>
- </div> */
+  <h2>
+    <span>hello,react!</span>
+  </h2><ul></ul>
+</div> */
 
 // 没有多余标签
 /* let h = <>
- <h2>
- <span>hello,react!</span>
- </h2><ul></ul>
- </> */
+  <h2>
+    <span>hello,react!</span>
+  </h2><ul></ul>
+</> */
 
 // 没有多余标签
 /* let h = <React.Fragment>
@@ -24,18 +24,15 @@ import * as serviceWorker from './serviceWorker';
  <span>hello,react!</span>
  </h2><ul></ul>
  </React.Fragment> */
-let lh = '我的名字是刘浩1'
+
 
 // 方法二 函数
 /* function createH () {
- return <React.Fragment>
- <h2><span>hello</span></h2><ul></ul>
- </React.Fragment>
- } */
+  return <React.Fragment>
+    <h2><span>hello</span></h2><ul></ul>
+  </React.Fragment>
+} */
 
-function createH() {
-  return '我的名字是刘浩2'
-}
 
 // 方法三 数组
 // 数组必须有key值，是做性能优化的，可以复用你的代码
@@ -45,28 +42,18 @@ function createH() {
  ] */
 
 let value = 'hello,react'
-let data = [1, 2, 3, 4, 5, 6, 7]
+let data = [1,2,3,4,5,6,7]
 
-let lis = data.map((item) => {
+let lis = data.map((item)=>{
   // 以后最好直接拿id做key值
   return <li key={item}>{item}</li>
 })
-
-let myName = '我的名字是刘浩'.split('').map((item) => {
-  return <li key={item}>{item}</li>
-})
-
 let h = <React.Fragment>
-  <p>{lh}</p>
-  <h2>{createH()}</h2>
-  <ul>
-    {myName}
-  </ul>
   <h2 title={value}>
     <span>{value}</span><br/>
     <span>{1 + 1}</span><br/>
     <span>{true ? 1 : 90}</span><br/>
-    <span>{[1, 2, 3].map((item) => item * 2)}</span><br/>
+    <span>{[1,2,3].map((item) => item * 2)}</span><br/>
     <span>{1 > 2}</span><br/>
     <span>{String(true)}</span><br/>
     <span>{String(null)}</span><br/>
@@ -78,7 +65,7 @@ let h = <React.Fragment>
   {/* 这才是注释 */}
   <ul>
     {
-      data.map((item) => {
+      data.map((item)=>{
         // 以后最好直接拿id做key值
         return <li key={item}>{item}</li>
       })
