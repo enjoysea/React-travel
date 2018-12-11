@@ -26,7 +26,7 @@ import * as serviceWorker from './serviceWorker';
  </React.Fragment> */
 
 // 自写方法一
-let lh = '我的名字是enjoysea1'
+let lh = '我的名字是迈出旮旯看海'
 
 // 方法二 函数
 /* function createH () {
