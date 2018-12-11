@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- type="text/babel" 告诉babel.min.js文件，里面就归你来管了 -->
+  <script type="text/babel">
+    let h = <h2>
+      <span>hello,react!</span>
+     </h2>;
+    ReactDOM.render(h, document.getElementById('root'));
+  </script>
+</body>
+</html>
