@@ -1,12 +1,12 @@
+﻿
+使用JSX语法的优点
 
-ʹ��JSX�﷨���ŵ�
+	1、符合写模板的习惯
 
-	1������дģ���ϰ��
+	2、程序结构更容易被直观化
 
-	2������ṹ�����ױ�ֱ�ۻ�
+	3、抽象了React Element的创建过程
 
-	3��������React Element�Ĵ�������
+	4、书写的依然是JS，不需要学习新的模板语法
 
-	4����д����Ȼ��JS������Ҫѧϰ�µ�ģ���﷨
-
-	JSX�﷨ֻ��ΪReact.creatElement�ṩ�﷨��
+	JSX语法只是为React.creatElement提供语法糖
