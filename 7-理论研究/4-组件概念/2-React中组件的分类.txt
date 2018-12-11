@@ -1,0 +1,4 @@
+React中组件的分类
+	1、函数式组件（Functional component）
+	2、类组件（Class component）
+	
