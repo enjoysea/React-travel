@@ -26,7 +26,7 @@ import * as serviceWorker from './serviceWorker';
  </React.Fragment> */
 
 // 自写方法一
-let lh = '我的名字是迈出旮旯看海'
+let lh = '我的名字是迈出旮旯看海1'
 
 // 方法二 函数
 /* function createH () {
@@ -37,7 +37,7 @@ let lh = '我的名字是迈出旮旯看海'
 
 // 自写方法二
 function createH() {
-  return '我的名字是enjoysea2'
+  return '我的名字是迈出旮旯看海2'
 }
 
 // 方法三 数组
@@ -56,7 +56,7 @@ let lis = data.map((item) => {
 })
 
 // 自写方法三
-let myName = '我的名字是enjoysea'.split('').map((item) => {
+let myName = '我的名字是迈出旮旯看海3'.split('').map((item) => {
   return <li key={item}>{item}</li>
 })
 
