@@ -24,7 +24,9 @@ import * as serviceWorker from './serviceWorker';
  <span>hello,react!</span>
  </h2><ul></ul>
  </React.Fragment> */
-let lh = '我的名字是刘浩1'
+
+// 自写方法一
+let lh = '我的名字是enjoysea1'
 
 // 方法二 函数
 /* function createH () {
@@ -33,8 +35,9 @@ let lh = '我的名字是刘浩1'
  </React.Fragment>
  } */
 
+// 自写方法二
 function createH() {
-  return '我的名字是刘浩2'
+  return '我的名字是enjoysea2'
 }
 
 // 方法三 数组
@@ -52,13 +55,17 @@ let lis = data.map((item) => {
   return <li key={item}>{item}</li>
 })
 
-let myName = '我的名字是刘浩'.split('').map((item) => {
+// 自写方法三
+let myName = '我的名字是enjoysea'.split('').map((item) => {
   return <li key={item}>{item}</li>
 })
 
 let h = <React.Fragment>
+  {/*应用自写方法一*/}
   <p>{lh}</p>
+  {/*应用自写方法二*/}
   <h2>{createH()}</h2>
+  {/*应用自写方法三*/}
   <ul>
     {myName}
   </ul>
