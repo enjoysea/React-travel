@@ -1,0 +1,18 @@
+
+Props
+
+1、props的作用
+	Props是对组件的配置参数，数据来源于外界传入，类似给函数传入参数一样，
+	组件会返回需要展示的UI描述对象
+
+2、props的使用
+	- props写在组件标签上，作为自定义的行间属性
+	- 内部会把写在行间的属性传递给组件的props对象上
+
+3、props的默认值
+	写在类或函数的静态属性defaultProps上
+
+4、props的类型判断
+	安装第三方模块：npm i prop-types -s
+	验证规则写在类的静态属性propTypes上
+	https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes

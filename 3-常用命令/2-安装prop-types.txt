@@ -1,0 +1,2 @@
+°²×°prop-types:
+	npm i prop-types -s

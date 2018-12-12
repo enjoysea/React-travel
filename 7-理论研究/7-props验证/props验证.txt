@@ -1,0 +1,48 @@
+
+文档验证
+
+1、https://reactjs.org → Docs → ADVANCED GUIDES → Typechecking With PropTypes
+
+2、安装prop-types，因为到线上也要用到，所以-s，安装生产依赖
+	如果安装慢，可以切换到淘宝源上
+	npm i prop-types -s
+
+3、验证规则很多：
+  optionalArray: PropTypes.array,
+  optionalBool: PropTypes.bool,
+  optionalFunc: PropTypes.func,
+  optionalNumber: PropTypes.number,
+  optionalObject: PropTypes.object,
+  optionalString: PropTypes.string,
+  optionalSymbol: PropTypes.symbol,
+  optionalNode: PropTypes.node,	// 是否是 node类型
+  optionalElement: PropTypes.element，// A React element.
+
+  // You can also declare that a prop is an instance of a class. This uses
+  // JS's instanceof operator.
+  optionalMessage: PropTypes.instanceOf(Message)，
+
+  // 你数组中的元素是否包含在下面的数组中
+  optionalEnum: PropTypes.oneOf(['News', 'Photos']),
+
+  // An object that could be one of many types
+  // 对象中的一些东西
+  optionalUnion: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.instanceOf(Message)
+  ]),
+
+  ...
+
+
+// 自定义规则
+// 比如要求>0，而如果<0，就new Error
+customProp: function(props, propName, componentName) {
+    if (!/matchme/.test(props[propName])) {
+      return new Error(
+        'Invalid prop `' + propName + '` supplied to' +
+        ' `' + componentName + '`. Validation failed.'
+      );
+    }
+},
