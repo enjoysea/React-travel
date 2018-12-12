@@ -31,8 +31,8 @@ class Button extends React.Component {
         }}>{value}</button>
         {/*测试函数中this指向的问题*/}
         <button onClick={this.handle2}>测试类中函数this指向</button>
+        {/*this是在render里定义的，所以this就指代render函数中的this*/}
         <button onClick={()=>{
-          {/*this是在render里定义的，所以this就指代render函数中的this*/}
           console.log(this)
         }}>{value}</button>
         {/*修改类中函数this指向问题*/}
