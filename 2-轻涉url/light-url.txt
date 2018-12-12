@@ -1,2 +1,5 @@
 ﻿1、使用PropTypes进行类型检测
 https://segmentfault.com/a/1190000007814801
+
+2、使用 PropTypes 进行类型检查
+https://react.docschina.org/docs/typechecking-with-proptypes.html
