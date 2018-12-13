@@ -1,0 +1,24 @@
+
+handle6 = (e) => {
+    console.log('事件对象', e)
+    e.persist() // 保持引用
+    console.log({...e}) // 有值
+    console.log(e.type)
+    
+    // 保持对事件对象的引用
+    setTimeout(() => {
+      // 异步拿不到属性了，内部会释放的
+      console.log(e.type)
+    }, 1000)
+}
+
+具体：
+1、console.log('事件对象', e)，直接打，e的属性值为null
+2、如果加上e.persist()，console.log('事件对象', e)，e的属性值是有的
+3、console.log({...e})，e的属性值是有的，浅拷贝
+4、console.log(e.type)，e.type是有值的
+5、setTimeout(() => {
+      // 异步拿不到属性了，内部会释放的
+      console.log(e.type)
+    }, 1000)
+6、如果5想拿到e.type，就需要加上e.persist() // 保持引用

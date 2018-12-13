@@ -1,0 +1,29 @@
+
+改变this指向的方式
+1、<button onClick={this.handle3.bind(this)}>修改函数中this指向3</button>
+// 方式一：修改this指向
+  handle3 () {
+    console.log(3, this)
+  }
+
+
+2、<button onClick={this.handle4}>修改函数中this指向4</button>
+constructor(props) {
+    super(props)
+    // 给实例上添加一个方法
+    // 初始化去改变this指向
+    this.handle4 = this.handle4.bind(this)
+}
+// 方式二：修改this指向
+  handle4 (e) {  // handle = function (){}
+    console.log(4, this)
+    console.log(e)
+  }
+
+
+3、<button onClick={this.handle5}>修改函数中this指向5</button>
+// 方式三：箭头函数中修改this指向
+  handle5 = (e) => {
+    console.log(5, this)
+    console.log(e)
+  }

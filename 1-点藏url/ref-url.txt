@@ -26,3 +26,6 @@ https://reactjs.org/docs/typechecking-with-proptypes.html
 9、事件
 http://www.reactjs.org/docs/handling-events.html
 
+10、合成事件（事件对象）
+https://reactjs.org/docs/events.html
+
