@@ -1,0 +1,35 @@
+一、兄弟组件之间的通信
+
+1、子组件绑定onClick事件
+<input
+	className="btn" type="button" value="取消"
+	onClick={this.clickCancel}
+/>
+
+
+2、子组件所绑定的事件
+clickCancel = () => {
+	if (typeof this.props.clickCancel === 'function') {
+		this.props.clickCancel('blue') // 执行父组件的函数，key值是clickCancel
+	}
+}
+
+
+3、父组件的状态
+<Sibling color={this.state.color3}></Sibling>
+
+
+4、父组件所对应状态的初始值
+this.state = {
+	color3: ''		
+}
+
+
+5、父组件所对应的改变状态的函数
+changeSiblingStyle = (color) => {
+    // 改变color3
+    this.setState({
+      color3: color
+    })
+}
+
