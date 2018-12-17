@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import Modal from './components/modal'
 class App extends Component {
   
@@ -53,8 +53,8 @@ class App extends Component {
           clickCancel={this.changeSiblingStyle}
         />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
