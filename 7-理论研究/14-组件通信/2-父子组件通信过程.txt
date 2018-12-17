@@ -1,0 +1,49 @@
+﻿一、子组件到父组件的通信过程
+
+1、子组件绑定onClick事件
+<input
+	className="btn"
+	type="button"
+	value="确定"
+	onClick={this.clickOk}
+/>
+
+
+2、子组件所绑定的事件
+clickOk = () => {
+    // 不能做具体的事情，交给外界去使用
+    if (typeof this.props.clickOk === 'function') {
+      this.props.clickOk();
+    }
+}
+
+
+3、父组件的自定义函数（订阅、发布模式）
+<Modal title="测试第一个" clickOk={this.changeFirstH2}/>
+<Modal title="测试第二个" clickOk={this.changeTwoH2}/>
+
+
+4、父组件所对应的不同状态
+this.state = {
+	color1: '',
+	color2: ''	
+}
+
+
+5、父组件所对应的不同函数
+changeFirstH2 = () => {
+	console.log('changeFirstH2')
+	this.setState({
+		color1: 'red'
+	})
+}
+  
+changeTwoH2 = () => {
+	console.log('changeTwoH2')
+	this.setState({
+		color2: 'green'
+	})
+}
+
+
+

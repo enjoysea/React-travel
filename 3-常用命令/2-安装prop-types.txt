@@ -1,2 +1,2 @@
-��װprop-types:
+﻿安装prop-types:
 	npm i prop-types -s
