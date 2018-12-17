@@ -1,0 +1,46 @@
+
+一、状态是由自身来决定的
+this.state = {
+	color: ''
+}
+      
+<button onClick={() => {
+	this.setState({
+		color: 'red'
+	})
+}} style={{color: this.state.color}}>改变样式
+</button>
+
+---------------------------------------------------------------------
+
+二、状态是由外部来决定的
+<button onClick={this.handle}>{this.props.value}</button>
+
+---------------------------------------------------------------------
+
+三、组件的初始状态是外面传入的props,然后改变初始值
+this.state = {
+      color: '',
+      m: this.props.n // 初始状态的值是外界传入的props作为初始状态的值
+}
+
+<button onClick={() => {
+	let k = this.state.m
+	k++
+	this.setState({
+		m: k
+	})
+}}>依次加1
+</button>
+
+<p>内部的数字状态：{this.state.m}</p>
+
+
+
+
+
+
+
+
+
+
