@@ -29,3 +29,7 @@ http://www.reactjs.org/docs/handling-events.html
 10、合成事件（事件对象）
 https://reactjs.org/docs/events.html
 
+11、refs
+https://reactjs.org/docs/refs-and-the-dom.html
+
+

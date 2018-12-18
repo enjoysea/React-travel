@@ -1,0 +1,47 @@
+一、children混合数据
+
+写在组件标签对之间的内容，会被当成props传递给组件，在组件props的
+children上拿到对应的值
+
+一般使用children用来混合一些结构用的，可以写任意表达式的值
+
+----------------------------------------------------------------
+
+二、children混合数据的三种方式
+1、方式一：
+
+<TestChildren>
+	123
+	<div>hello</div>
+	<div>hello</div>
+	<div>hello</div>
+</TestChildren>
+
+接收：<div>{this.props.children}</div>
+
+
+2、方式二：传递一个表达式，
+比如：传递一个{}
+
+<TestChildren>
+	{
+		{
+			a: 1
+		}
+	}
+</TestChildren>
+接收：{this.props.children.a}
+
+
+3、方式三：直接传递一个函数
+<TestChildren>
+	{
+		(child) => {
+			return <div>{child}</div>
+		}
+	}
+</TestChildren>
+接收：let bl = typeof this.props.children === 'function'
+{
+	bl ? this.props.children('hello,我是子级传来的') : null
+}
