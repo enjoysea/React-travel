@@ -1,0 +1,50 @@
+﻿一、refs
+
+1、函数形式：
+	<p ref={(abc) => this.p1 = abc}>测试函数形式的ref</p>
+	<p ref={(abc) => this.p2 = abc}>测试函数形式的ref</p>
+	<p ref={(abc) => this.p3 = abc}>测试函数形式的ref</p>
+
+
+2、push的形式：
+	this.ps = []
+
+	<p ref={(abc) => this.ps.push(abc)}>测试函数形式的ref</p>
+	<p ref={(abc) => this.ps.push(abc)}>测试函数形式的ref</p>
+	<p ref={(abc) => this.ps.push(abc)}>测试函数形式的ref</p>
+
+
+3、map：
+应用场景：获取多个元素，推荐使用 ✔
+	this.spans = []	
+
+	{
+          [1, 2, 3, 4].map((item) => {
+            return <span ref={(s)=>this.spans.push(s)}>{item}</span>
+          })
+        }
+
+
+4、createRef()
+应用场景，取一个元素，推荐使用 ✔
+
+this.list = React.createRef()
+<ul ref={this.list}>
+
+
+5、组件上的ref
+<Modal ref={this.modal} title="显示标题">
+</Modal>
+console.log(this.modal.current)
+
+注：组件上的ref是不传递给子组件的
+
+
+
+
+
+
+
+
+
+
