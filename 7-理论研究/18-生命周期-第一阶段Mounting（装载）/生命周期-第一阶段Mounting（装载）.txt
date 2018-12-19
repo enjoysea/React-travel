@@ -1,0 +1,11 @@
+一、生命周期
+
+	第一阶段Mounting 装载
+
+	1、constructor // 构造函数，只走一次
+
+	2、static getDerivedStateFromProps(prop, state) // 在你 render 之前，给你一次改变 state 的机会， 不改变就返回null
+
+	3、render() // 渲染页面元素
+
+	4、componentDidMount() // 只走一次，组件装载完成，可以获取真正的 DOM 元素
