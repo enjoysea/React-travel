@@ -17,9 +17,40 @@
 	false：阻断render的执行，后面的生命周期函数不会执行，视图不会更新
 
 
-三、执行顺序
+三、在更新之前获取一个快照
+	1、getSnapshotBeforeUpdate(prevProp, prevState) {}
+
+	但要和下面搭配使用：
+	componentDidUpdate(pProps, pState, snapshot) {     		
+    		console.logsnapshot) 
+	}
+
+	（1）它执行的时候，新的visualDOM的结构已经计算出来了
+	（2）但是，这个时候，浏览器DOM元素还没有更新
+	（3) 开始是不会执行componentDidUpdate的，只有在页面更新时才会执行
+
+
+	2、componentDidUpdate(p, s, shot) {}
+	（1）更新已经完成的时候调用
+	（2）获取真正的 DOM 元素
+	（3）里面可以做一些动效
+	（4）shot 是 getSnapshotBeforeUpdate(){}函数的返回值
+
+
+四、为什么要有getSnapshotBeforeUpdate
+	1、浏览器更新dom，是非常损耗资源的
+	2、React16在内核里面有一些改动
+	3、原来是重要的操作都要等浏览器更新完成（即使是拖拽，进行浏览器大小的调整等）
+	4、React16将线程释放掉，看有没有更重要的事情要做
+	5、异步渲染，得到结构还要再等一会，但是时间非常短暂
+
+
+五、执行顺序
 	static getDerivedStateFromProps()
 	shouldComponentUpdate()
 	render()
 	getSnapshotBeforeUpdate()
 	componentDidUpdate()
+
+
+
