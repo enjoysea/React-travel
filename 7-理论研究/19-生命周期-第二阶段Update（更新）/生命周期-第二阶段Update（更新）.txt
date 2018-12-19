@@ -1,0 +1,25 @@
+
+一、父组件更新，（已挂载）子组件就会随着更新
+	但要走：
+	static getDerivedStateFromProps(prop, state) {}
+
+	才能更新
+
+
+二、用于优化性能  
+	shouldComponentUpdate(nextProps, nextState) {
+		console.log(nextProps, nextState)
+    		return true    
+  	}
+
+	返回一个 bool 值
+	true: 组件进行正常的更新流程
+	false：阻断render的执行，后面的生命周期函数不会执行，视图不会更新
+
+
+三、执行顺序
+	static getDerivedStateFromProps()
+	shouldComponentUpdate()
+	render()
+	getSnapshotBeforeUpdate()
+	componentDidUpdate()
