@@ -32,4 +32,6 @@ https://reactjs.org/docs/events.html
 11、refs
 https://reactjs.org/docs/refs-and-the-dom.html
 
+12、生命周期
+http://www.reactjs.org/docs/react-component.html
 
