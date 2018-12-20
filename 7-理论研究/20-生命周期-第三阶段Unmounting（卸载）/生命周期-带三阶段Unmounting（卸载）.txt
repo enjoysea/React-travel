@@ -1,0 +1,57 @@
+
+一、装载、更新、卸载
+  componentDidMount() {
+    console.log('sun 装载')
+  }
+  
+  componentDidUpdate() {
+    console.log('sun 更新')
+  }
+  
+  componentWillUnmount() {
+    console.log('sun 卸载')
+  }
+
+以上都可以获取真正的dom元素。
+
+
+二、根据条件来决定是否卸载
+{number > 0.5 && <Sun num={number}/>}
+
+
+三、卸载前
+componentWillUnmount(){}// 只执行一次
+
+
+四、只会执行一次的函数
+1、constructor
+2、componentDidMount()
+3、componentWillUnmount()
+
+
+五、已经过时的生命周期函数
+	Docs → API REFERENCE → React → React.Component
+
+1、Mounting
+	现在：static getDerivedStateFromProps()这个函数的
+	原来：componentWillMount() 
+		componentWillMount 将要装载,在render之前调用，但一般没有什么用处
+
+
+2、Updating
+	static getDerivedStateFromProps() 新加的
+	componentWillUpdate() // 不安全
+		会在render()之前，shouldComponentUpdate()之后调用
+
+	componentWillReceiveProps()
+		（1）相当于：getDerivedStateFromProps()
+		（2）自己组件的内部更新时没有效果的，
+		（3）只有父组件更新了，子组件这个函数才会执行		
+	
+
+3、Unmounting
+	componentWillUnmount() 
+	作用没有改变
+
+
+
