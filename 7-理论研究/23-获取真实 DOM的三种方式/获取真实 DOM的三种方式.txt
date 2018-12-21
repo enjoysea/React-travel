@@ -42,6 +42,8 @@
     			console.log(this.refs.h2, 'mounted')
   		}
 
+		参考：index.js
+
 
 
 
