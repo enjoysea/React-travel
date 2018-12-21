@@ -1,0 +1,29 @@
+
+一、组件受控
+
+	1、在React中，界面的变化是基于state的变化，
+	
+
+	2、组件状态的变化是否是 react 接管的，
+		只要input 加 value，就是受控（受react控制）的，
+		再输入也不会有变化
+
+		未受控
+		<input type="text" ref={el=>this.input=el}>
+		handleButtonClick = ()=>{
+			this.setState({
+				number: this.input.value
+			})
+		}
+
+		受控后：
+		<input
+          		type="text"
+          		value={inputVal}
+          		ref={el => this.input = el}
+          		onChange={this.handleInputChange}
+        	/>
+		参考：index.js
+
+
+	3、随后输入什么都是无效的
