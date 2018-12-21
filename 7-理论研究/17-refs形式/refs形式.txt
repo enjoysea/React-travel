@@ -39,6 +39,19 @@ console.log(this.modal.current)
 
 注：组件上的ref是不传递给子组件的
 
+----------------------------------------------------------------------
+
+Tip:增加一种
+<Input getInput={el => this.sunInput = el}></Input>
+function Input({getInput}) {
+  return (
+    <input type="text" ref={getInput}/>
+  )
+}
+
+this.sunInput.value
+
+参考：K:\React-20181105\1-React最佳入门-20181105\自写-翟宏杰-20181105 ✔\第二章\24-基于回调的组件交流 ✔\REACT-PROJECT
 
 
 
