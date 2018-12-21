@@ -1,0 +1,49 @@
+﻿
+一、在react 中获取dom元素 有以下三种方式
+
+	1、回调 ✔
+
+		<div id="outDIV" ref={el => this.outDIV = el}></div>
+
+		// 应用
+		// 在事件中获取
+		console.log(this.outDIV)
+
+		// 在componentDidMount中获取
+		componentDidMount () {
+    			console.log(this.outDIV, 'mounted')
+  		}
+
+		参考：index-o1.js
+
+
+	2、createRef ✔
+		this.outDIV = createRef()
+		<div id="outDIV" ref={this.outDIV}></div>
+
+		// 应用
+		componentDidMount () {
+    			console.log(this.outDIV.current, 'mounted')
+  		}
+
+		参考：index-o2.js
+
+
+
+	3、字符串（过时）
+		比较老的版本使用，就是在15之前
+
+		<div id="outDIV" ref="outDIV">
+			<h2 ref="h2">{name}</h2>
+		</div>
+
+		componentDidMount () {
+    			console.log(this.refs.outDIV, 'mounted')
+    			console.log(this.refs.h2, 'mounted')
+  		}
+
+
+
+
+
+
