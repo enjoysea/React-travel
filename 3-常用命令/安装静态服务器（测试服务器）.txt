@@ -1,0 +1,16 @@
+三、安装静态服务器（测试服务器）
+
+	1、全局安装：
+	npm i -g serve
+	serve -s build
+
+	2、局部安装（这里选择局部安装）：
+	npm i serve
+	npx serve -s build 
+
+	// npx serve -s build 跑起一个静态服务器，这个静态服务器
+	// 这个静态服务器服务的内容在build文件夹下
+	
+	访问：http://localhost:5000
+	index-o1.js 页面空白
+	如果有错误，控制台会抛出一个错误，整个文档树都被卸载了

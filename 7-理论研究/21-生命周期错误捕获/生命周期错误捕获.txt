@@ -1,0 +1,57 @@
+
+一、开发环境会抛出一个错误
+	参考：index-o1.js
+	界面会显示错误
+
+
+二、项目打包	
+	npm run build
+
+	打包文件：build/index.html
+	发现js都是以“/”开头，是绝对路径
+	需要一个测试服务器来模拟一下
+
+
+三、安装静态服务器（测试服务器）
+	全局安装：
+	npm i -g serve
+	serve -s build
+
+	局部安装（这里选择局部安装）：
+	npm i serve
+	npx serve -s build 
+	// npx serve -s build 跑起一个静态服务器，这个静态服务器
+	// 这个静态服务器服务的内容在build文件夹下
+	
+	访问：http://localhost:5000
+	index-o1.js 页面空白
+	控制台会抛出一个错误，整个文档树都被卸载了
+
+
+四、错误处理
+	参考:index-o2.js
+
+	开发模式：
+	npm start 
+	页面还会显示错误
+
+	--------------------------------
+
+	生产模式：
+	npm run build
+	npx serve -s build 
+	页面不会显示错误	
+	
+
+五、捕获子组件的生命周期函数的错误
+	参考：index.js
+	componentDidCatch(error, info){}
+	1、但是组件本身抛出的错误是不会捕捉到的
+		throw Error('错误') 
+	
+	2、切换回开发模式
+		npm start
+
+	可以做ui回退，告诉他某个地方崩溃掉了
+
+

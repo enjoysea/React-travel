@@ -1,0 +1,37 @@
+
+一、组件的生命周期大致分为：
+	Mounting  Update  Unmounting
+
+
+二、Mounting阶段
+	constructor()
+	static getDerivedStateFromProps()
+	render()
+	componentDidMount()
+
+	没有Pre-commit阶段可以监控的生命周期函数
+
+
+三、Updating阶段
+	一般来说调用了setState就进入了这个阶段
+
+	static getDerivedStateFromProps()
+	shouldComponentUpdate()
+	render()
+	getSnapshotBeforeUpdate()
+	componentDidUpdate()
+
+	正式更新到浏览器之前（Pre-commit阶段）：getSnapshotBeforeUpdate()
+
+
+四、Unmounting阶段
+	componentWillUnmount()
+	用于在卸载之前做一些事情
+
+
+五、只有类组件才有生命周期，函数式组件没有生命周期
+
+
+
+
+
