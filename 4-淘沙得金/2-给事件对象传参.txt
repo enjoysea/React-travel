@@ -1,0 +1,14 @@
+handle7 = (obj, e) => {
+    console.log(obj, e)
+}
+
+
+{/* 给事件对象传参 */}
+<button onClick={this.handle7.bind(this, {a: 1, b: 2})}>给事件对象传参</button>
+
+
+{/* 事件对象手动的传过去 */}
+<button onClick={(e) => {
+	this.handle7({a: 1, b: 2}, e)
+}}>给事件对象传参
+</button>
