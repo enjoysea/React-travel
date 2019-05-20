@@ -1,33 +1,33 @@
-Ò»¡¢ĞÖµÜ×é¼şÖ®¼äµÄÍ¨ĞÅ
+ï»¿ä¸€ã€å…„å¼Ÿç»„ä»¶ä¹‹é—´çš„é€šä¿¡
 
-1¡¢×Ó×é¼ş°ó¶¨onClickÊÂ¼ş
+1ã€å­ç»„ä»¶ç»‘å®šonClickäº‹ä»¶
 <input
-	className="btn" type="button" value="È¡Ïû"
+	className="btn" type="button" value="å–æ¶ˆ"
 	onClick={this.clickCancel}
 />
 
 
-2¡¢×Ó×é¼şËù°ó¶¨µÄÊÂ¼ş
+2ã€å­ç»„ä»¶æ‰€ç»‘å®šçš„äº‹ä»¶
 clickCancel = () => {
 	if (typeof this.props.clickCancel === 'function') {
-		this.props.clickCancel('blue') // Ö´ĞĞ¸¸×é¼şµÄº¯Êı£¬keyÖµÊÇclickCancel
+		this.props.clickCancel('blue') // æ‰§è¡Œçˆ¶ç»„ä»¶çš„å‡½æ•°ï¼Œkeyå€¼æ˜¯clickCancel
 	}
 }
 
 
-3¡¢¸¸×é¼şµÄ×´Ì¬
+3ã€çˆ¶ç»„ä»¶çš„çŠ¶æ€
 <Sibling color={this.state.color3}></Sibling>
 
 
-4¡¢¸¸×é¼şËù¶ÔÓ¦×´Ì¬µÄ³õÊ¼Öµ
+4ã€çˆ¶ç»„ä»¶æ‰€å¯¹åº”çŠ¶æ€çš„åˆå§‹å€¼
 this.state = {
 	color3: ''		
 }
 
 
-5¡¢¸¸×é¼şËù¶ÔÓ¦µÄ¸Ä±ä×´Ì¬µÄº¯Êı
+5ã€çˆ¶ç»„ä»¶æ‰€å¯¹åº”çš„æ”¹å˜çŠ¶æ€çš„å‡½æ•°
 changeSiblingStyle = (color) => {
-    // ¸Ä±äcolor3
+    // æ”¹å˜color3
     this.setState({
       color3: color
     })
