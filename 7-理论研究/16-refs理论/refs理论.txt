@@ -1,0 +1,41 @@
+﻿
+一、refs
+
+官网：Docs → ADVANCED GUIDES → Refs and the DOM
+
+https://reactjs.org/docs/refs-and-the-dom.html
+
+ref是引用的意思
+
+
+可以通过refs来获取原生的DOM元素
+
+何时使用refs
+	处理focus、文本选择或者媒体播发
+	触发强制动画
+	集成第三方DOM库
+
+如何使用refs
+	在JSX上写上属性ref即可
+		1、写在普通标签上，拿到DOM元素
+		2、写在组件标签上，拿到是组件实例
+
+	写的值有三种情况：
+		1、字符串形式，通过this.refs[字符串]渠道DOM元素
+		2、传入回调函数，挂在实例上
+		3、使用React.createRef()创建对象，通过current获取
+
+字符串形式存在问题
+	1、同一个名字不能映射多个元素，后面会覆盖前面
+	2、结构在哪里渲染的ref就会绑定到哪个实例上，用createRef()来解决这个问题
+
+
+
+
+
+
+
+
+
+
+
