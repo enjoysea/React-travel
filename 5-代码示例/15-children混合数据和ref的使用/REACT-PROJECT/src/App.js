@@ -30,7 +30,7 @@ class App extends Component {
           <div>hello</div>
         </TestChildren>
         {/*children混合数据方式二
-        也可以传一个表达式，比如{}*/}
+        也可以传一个表达式，比如传一个对象*/}
         <TestChildren>
           {
             {
