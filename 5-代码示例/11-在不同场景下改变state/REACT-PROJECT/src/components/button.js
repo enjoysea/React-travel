@@ -31,7 +31,7 @@ class Button extends React.Component {
           })
         }} style={{color: this.state.color}}>改变样式
         </button>
-        
+        {/* <p>外界传入的数字{this.props.n}</p> */}
         {/*场景三：组件的初始状态是外面传入的props,然后改变初始值*/}
         <button onClick={() => {
           let k = this.state.m
