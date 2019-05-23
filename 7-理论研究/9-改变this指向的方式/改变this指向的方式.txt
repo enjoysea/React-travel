@@ -1,29 +1,81 @@
-
-�ı�thisָ��ķ�ʽ
-1��<button onClick={this.handle3.bind(this)}>�޸ĺ�����thisָ��3</button>
-// ��ʽһ���޸�thisָ��
+﻿一、改变this指向的方式
+1、<button onClick={this.handle3.bind(this)}>修改函数中this指向3</button>
+// 方式一：修改this指向
   handle3 () {
     console.log(3, this)
   }
 
 
-2��<button onClick={this.handle4}>�޸ĺ�����thisָ��4</button>
+2、<button onClick={this.handle4}>修改函数中this指向4</button>
 constructor(props) {
     super(props)
-    // ��ʵ��������һ������
-    // ��ʼ��ȥ�ı�thisָ��
+    // 给实例上添加一个方法
+    // 初始化去改变this指向
     this.handle4 = this.handle4.bind(this)
 }
-// ��ʽ�����޸�thisָ��
+// 方式二：修改this指向
   handle4 (e) {  // handle = function (){}
     console.log(4, this)
     console.log(e)
   }
 
 
-3��<button onClick={this.handle5}>�޸ĺ�����thisָ��5</button>
-// ��ʽ������ͷ�������޸�thisָ��
+3、<button onClick={this.handle5}>修改函数中this指向5</button>
+// 方式三：箭头函数中修改this指向
   handle5 = (e) => {
     console.log(5, this)
     console.log(e)
   }
+
+
+
+二、事件对象
+在React中的事件对象不是原生的事件对象，是SyntheticEvent的实例
+一个跨浏览器原生事件包装器，它具有与浏览器原生事件相同的接口。
+
+使用nativeEvent 获取原生的事件对象。
+handle = (e) => {    
+    console.log(e)
+    // 获取原生的事件对象
+    console.log(e.nativeEvent)
+}
+
+SyntheticEvent 对象在事件调用后出于性能考虑属性会被取消，无法
+异步获取属性。要异步获取，调用persist，保留引用。
+
+
+具体：
+1、console.log('事件对象', e)，直接打，e的属性值为null
+2、console.log({...e})，e的属性值是有的，浅拷贝
+3、如果加上e.persist()，console.log('事件对象', e)，e的属性值是有的
+4、console.log(e.type)，e.type是有值的
+5、setTimeout(() => {
+      // 异步拿不到属性了，内部会释放的
+      console.log(e.type)
+    }, 1000)
+6、如果5想拿到e.type，就需要加上e.persist() // 保持引用
+
+
+三、传参的方式
+
+	handle7 = (obj, e) => {
+   		console.log(obj, e)
+  	}
+
+	{/* 给事件对象传参 */}
+        <button onClick={this.handle7.bind(this, {a: 1, b: 2})}>给事件对象传参</button>
+        
+	{/* 事件对象手动的传过去 */}
+        <button onClick={(e) => {
+          this.handle7({a: 1, b: 2}, e)
+        }}>给事件对象传参
+        </button>
+
+
+四、官方文档：事件对象
+1、https://reactjs.org → API REFERENCE → SyntheticEvent
+
+
+
+
+

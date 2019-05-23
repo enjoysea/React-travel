@@ -3,6 +3,7 @@ import React from 'react'
 /* function handle () {
  console.log(1)
  } */
+
 class Button extends React.Component {
   
   constructor(props) {
@@ -18,7 +19,7 @@ class Button extends React.Component {
     value: '确定'
   }
   
-  handle() {
+  handle () {
     console.log(1)
   }
   
@@ -41,15 +42,17 @@ class Button extends React.Component {
   handle5 = (e) => {
     console.log(5, this)
     console.log(e)
+    // 获取原生的事件对象
+    console.log(e.nativeEvent)
   }
   
   handle6 = (e) => {
     console.log('事件对象', e)
-    e.persist() // 保持引用
     // 技巧：浅克隆一份。有值
     console.log({...e})
     console.log(e.type)
-    
+  
+    e.persist() // 保持引用
     // 保持对事件对象的引用
     setTimeout(() => {
       // 异步拿不到属性了，内部会释放的
@@ -72,24 +75,24 @@ class Button extends React.Component {
         <button onClick={() => {
           console.log(1)
         }}>{value}</button>
-        {/* 测试函数中this指向的问题 */}
+        {/*测试函数中this指向的问题*/}
         <button onClick={this.handle2}>测试类中函数this指向</button>
         <button onClick={() => {
           console.log(this)
         }}>{value}</button>
-        {/* 修改函数中this指向问题 */}
+        {/*修改函数中this指向问题*/}
         
-        {/* bind调用后会返回一个新的函数，
+        {/*bind调用后会返回一个新的函数，
          点击button后就会将新函数给执行，
          在内部里面会将handle3给执行了，
-         handle3的this，就是bind的第一个参数 */}
+         handle3的this，就是bind的第一个参数*/}
          
         {/* 以下bind的方式也是有问题的，因为是放在render中，每一次更新，bind 都会重新调用*/}
         {/* 改变this指向方式一 */}
         <button onClick={this.handle3.bind(this)}>修改函数中this指向3</button>
         <button onClick={this.handle4}>修改函数中this指向4</button>
         <button onClick={this.handle5}>修改函数中this指向5</button>
-        {/* 测试事件对象 */}
+        {/*测试事件对象*/}
         <button onClick={this.handle6}>测试事件对象</button>
     
         {/* 给事件对象传参 */}
