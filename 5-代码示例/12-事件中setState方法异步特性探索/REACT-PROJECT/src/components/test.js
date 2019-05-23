@@ -16,13 +16,13 @@ class Test extends Component {
     
     this.setState({
       n: this.state.n + 1
-    })
+    });
     this.setState({
       n: this.state.n + 1
-    })
+    });
     this.setState({
       n: this.state.n + 1
-    })
+    });
    
     // 页面展示是2
     // 先执行下面，还是 1，因为表现出来是异步的
@@ -49,8 +49,9 @@ class Test extends Component {
       // 数据更新之后，DOM也更新之后，会触发这个回调，用来操作页面中的元素
       console.log('更新后的值', this.state.m)
     })
-    // 还是 1，因为表现出来是异步的
+    
     // 页面展示是4
+    // 还是 1，因为表现出来是异步的
     // 先执行这句话，再走上面的
     console.log(this.state.m)
   }
@@ -69,4 +70,3 @@ class Test extends Component {
 }
 
 export default Test
-
