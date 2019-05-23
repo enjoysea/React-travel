@@ -12,9 +12,9 @@ class App extends Component {
   }
   
   changeVal = () => {
-    //this.state.val = '123' // 数据发生变化
+    //this.state.val = '123' // 只是数据发生变化
     console.log(this.state)
-    this.setState({
+    this.setState({ // 更新视图
       val: '123'
     })
   }
