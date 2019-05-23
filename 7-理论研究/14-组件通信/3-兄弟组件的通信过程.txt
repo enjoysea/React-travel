@@ -1,4 +1,7 @@
-﻿一、兄弟组件之间的通信
+﻿
+一、兄弟组件之间的通信
+
+状态提升到两个组件公共的父组件上
 
 1、子组件绑定onClick事件
 <input
@@ -21,7 +24,7 @@ clickCancel = () => {
 
 4、父组件所对应状态的初始值
 this.state = {
-	color3: ''		
+	color3: ''
 }
 
 
@@ -32,4 +35,3 @@ changeSiblingStyle = (color) => {
       color3: color
     })
 }
-
