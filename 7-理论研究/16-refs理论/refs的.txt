@@ -1,4 +1,5 @@
-﻿一、refs的应用形式
+﻿
+一、refs
 
 1、函数形式：
 	<p ref={(abc) => this.p1 = abc}>测试函数形式的ref</p>
@@ -6,7 +7,7 @@
 	<p ref={(abc) => this.p3 = abc}>测试函数形式的ref</p>
 
 
-2、做成集合的形式（push）：
+2、push的形式：
 	this.ps = []
 
 	<p ref={(abc) => this.ps.push(abc)}>测试函数形式的ref</p>
@@ -15,12 +16,12 @@
 
 
 3、map：
-	应用场景：获取多个元素，推荐使用 ✔
+应用场景：获取多个元素，推荐使用 ✔
 	this.spans = []	
 
 	{
           [1, 2, 3, 4].map((item) => {
-            return <span key={item} ref={(s)=>this.spans.push(s)}>{item}</span>
+            return <span key={item} ref={(s)=>this.spans.push(s)}></span>
           })
         }
 
@@ -32,7 +33,6 @@ this.list = React.createRef()
 <ul ref={this.list}>
 
 
-
 5、组件上的ref
 <Modal ref={this.modal} title="显示标题">
 </Modal>
@@ -40,21 +40,6 @@ console.log(this.modal.current)
 
 注：组件上的ref是不传递给子组件的
 
-
-----------------------------------------------------------------------
-
-
-Tip:增加一种
-<Input getInput={el => this.sunInput = el}></Input>
-function Input({getInput}) {
-  return (
-    <input type="text" ref={getInput}/>
-  )
-}
-
-this.sunInput.value
-
-参考：K:\React-20181105\1-React最佳入门-20181105\自写-翟宏杰-20181105 ✔\第二章\24-基于回调的组件交流 ✔\REACT-PROJECT
 
 
 
