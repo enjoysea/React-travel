@@ -29,17 +29,30 @@ componentWillUnmount(){}// 只执行一次
 3、componentWillUnmount()
 
 
-五、已经过时的生命周期函数
+五、几个函数的执行顺序
+	constructor //构造函数（只走一次）
+	static getDerivedStateFromProps() //在你 render 之前，给你一次改变 state 的机会， 不改变就返回null
+	shouldComponentUpdate() //做性能优化，是否要更新
+	render() //渲染页面元素
+	componentDidMount() //组件装载完成，可以获取真正的 DOM 元素（只走一次）
+	getSnapshotBeforeUpdate() //装载前做一个快照，	它执行的时候，新的visualDOM的结构已经计算出来了
+                              但是，这个时候，浏览器DOM元素还没有更新
+	componentDidUpdate() //在组件更新已经完成的时候调用 获取真正的 DOM 元素
+	componentWillUnmount() //将要被卸载（只走一次）
+
+
+六、已经过时的生命周期函数（15版本之前）
 	Docs → API REFERENCE → React → React.Component
 
 1、Mounting
 	现在：static getDerivedStateFromProps()这个函数的
 	原来：componentWillMount() 
-		componentWillMount 将要装载,在render之前调用，但一般没有什么用处
+		componentWillMount 将要被装载,在render之前调用，但一般没有什么用处
 
 
 2、Updating
 	static getDerivedStateFromProps() 新加的
+
 	componentWillUpdate() // 不安全
 		会在render()之前，shouldComponentUpdate()之后调用
 
@@ -51,7 +64,7 @@ componentWillUnmount(){}// 只执行一次
 
 3、Unmounting
 	componentWillUnmount() 
-	作用没有改变
+	没有改变
 
 
 

@@ -1,9 +1,23 @@
 
-一、组件的生命周期大致分为：
+一、几个函数的执行顺序
+	constructor //构造函数（只走一次）
+	static getDerivedStateFromProps() //在你 render 之前，给你一次改变 state 的机会， 不改变就返回null
+	shouldComponentUpdate() //做性能优化，是否要更新
+	render() //渲染页面元素
+	componentDidMount() //组件装载完成，可以获取真正的 DOM 元素（只走一次）
+	getSnapshotBeforeUpdate() //装载前做一个快照，	它执行的时候，新的visualDOM的结构已经计算出来了
+                              但是，这个时候，浏览器DOM元素还没有更新
+	componentDidUpdate() //在组件更新已经完成的时候调用 获取真正的 DOM 元素
+	componentWillUnmount() //将要被卸载（只走一次）
+
+
+----------------------------------------------------------------------------------------------------------
+
+
+二、组件的生命周期大致分为：
 	Mounting  Update  Unmounting
 
-
-二、Mounting阶段
+三、Mounting阶段
 	constructor()
 	static getDerivedStateFromProps()
 	render()
@@ -12,7 +26,7 @@
 	没有Pre-commit阶段可以监控的生命周期函数
 
 
-三、Updating阶段
+四、Updating阶段
 	一般来说调用了setState就进入了这个阶段
 
 	static getDerivedStateFromProps()
@@ -24,12 +38,12 @@
 	正式更新到浏览器之前（Pre-commit阶段）：getSnapshotBeforeUpdate()
 
 
-四、Unmounting阶段
+五、Unmounting阶段
 	componentWillUnmount()
 	用于在卸载之前做一些事情
 
 
-五、只有类组件才有生命周期，函数式组件没有生命周期
+六、只有类组件才有生命周期，函数式组件没有生命周期
 
 
 
